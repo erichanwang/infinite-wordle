@@ -17,8 +17,8 @@ const winPercentageEl = document.getElementById('win-percentage');
 
 // Initialize game
 function initGame() {
-    // Select a random word
-    currentWord = words[Math.floor(Math.random() * words.length)].toUpperCase();
+    // Select a random word from awords (answers)
+    currentWord = awords[Math.floor(Math.random() * awords.length)];
     currentRow = 0;
     currentTile = 0;
     gameOver = false;
@@ -289,6 +289,11 @@ function updateStats() {
 // Handle physical keyboard input
 document.addEventListener('keydown', (e) => {
     if (gameOver) return;
+
+    // Allow system commands (Ctrl+R, Ctrl+F5, etc.) to work
+    if (e.ctrlKey || e.metaKey || e.altKey) {
+        return;
+    }
 
     const key = e.key.toUpperCase();
 
