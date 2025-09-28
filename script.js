@@ -587,8 +587,20 @@ function loadStats() {
     updateStats();
 }
 
+// Center the main container
+function centerMainContainer() {
+    const leftStatsWidth = document.querySelector('.left-stats').offsetWidth;
+    const mainContainer = document.querySelector('.main-container');
+    const windowWidth = window.innerWidth;
+    const mainContainerWidth = mainContainer.offsetWidth;
+    const marginLeft = (windowWidth - mainContainerWidth + leftStatsWidth) / 2;
+    mainContainer.style.marginLeft = `${marginLeft}px`;
+}
+
 // Initialize game on load
 document.addEventListener('DOMContentLoaded', () => {
     loadStats();
     initGame();
+    centerMainContainer();
+    window.addEventListener('resize', centerMainContainer);
 });

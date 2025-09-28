@@ -13,9 +13,6 @@ body {
     overflow: hidden;
     position: relative;
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
 }
 
 .left-stats {
@@ -28,9 +25,14 @@ body {
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     height: fit-content;
     z-index: 5;
+    flex-shrink: 0;
 }
 
 .left-stats div {
@@ -48,8 +50,6 @@ body {
     width: 100%;
     text-align: center;
     padding: 20px 0;
-    margin: 0 auto;
-    margin-left: 270px; /* Further adjusted for true centering */
 }
 
 h1 {
@@ -410,6 +410,11 @@ footer a:hover {
 }
 
 @media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
     body {
         flex-direction: column;
         align-items: center;
