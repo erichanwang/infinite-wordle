@@ -8,9 +8,9 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #121213;
     color: #ffffff;
-    min-height: 100vh;
-    margin: 0;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     padding: 20px;
 }
@@ -50,6 +50,8 @@ body {
     width: 100%;
     text-align: center;
     padding: 20px 0;
+    margin: 0 auto;
+    transform: translateX(-300px);
 }
 
 h1 {
@@ -434,7 +436,7 @@ footer a:hover {
 
     .main-container {
         max-width: 95%;
-        padding: 10px 0;
+        padding: 0px 0;
     }
 
     .tile {
